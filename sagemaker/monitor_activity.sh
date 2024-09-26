@@ -41,6 +41,7 @@ check_cpu_usage() {
 # Main loop
 while true; do
     CPU_USAGE=$(check_cpu_usage)
+    echo $CPU_USAGE
 
     # Check if the CPU is below the threshold using bc for floating-point comparison
     if echo "$CPU_USAGE < $IDLE_CPU_THRESHOLD" | bc -l | grep -q 1; then
