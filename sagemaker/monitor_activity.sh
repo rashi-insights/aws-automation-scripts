@@ -20,13 +20,17 @@ DOMAIN_ID="d-cofiway7apio"
 PROFILE="lifecycle-config-script"
 SPACE_NAME="private-automation-test"
 
+echo $AWS_ACCESS_KEY_ID
+echo $AWS_SECRET_ACCESS_KEY
+echo $AWS_SESSION_TOKEN
+
 aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile $PROFILE
 aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile $PROFILE
 aws configure set aws_session_token $AWS_SESSION_TOKEN --profile $PROFILE
 
 # Function to check CPU usage
 check_cpu_usage() {
-    CPU_USAGE=$(mpstat 1 1 | awk '/all/ {print 100 - $NF}')
+    CPU_USAGE=$(mpstat 1 1 | awk 'NR==4 {print 100 - $NF}')
     echo $CPU_USAGE
 }
 
@@ -44,7 +48,7 @@ while true; do
     # If idle time threshold is reached, create the flag file
     if [ $IDLE_COUNTER -ge $IDLE_TIME_THRESHOLD ]; then
         echo "JupyterLab has been idle for $IDLE_TIME_THRESHOLD seconds."
-        # aws sagemaker delete-app --domain-id $DOMAIN_ID --app-type $APP_TYPE --app-name $APP_NAME --space-name $SPACE_NAME --region $REGION --profile $PROFILE
+        aws sagemaker delete-app --domain-id $DOMAIN_ID --app-type $APP_TYPE --app-name $APP_NAME --space-name $SPACE_NAME --region $REGION --profile $PROFILE
         break
     fi
 
