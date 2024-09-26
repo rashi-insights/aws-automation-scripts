@@ -20,6 +20,10 @@ DOMAIN_ID="d-cofiway7apio"
 PROFILE="lifecycle-config-script"
 SPACE_NAME="private-automation-test"
 
+AWS_ACCESS_KEY_ID=$1
+AWS_SECRET_ACCESS_KEY=$2
+AWS_SESSION_TOKEN=$3
+
 echo $AWS_ACCESS_KEY_ID
 echo $AWS_SECRET_ACCESS_KEY
 echo $AWS_SESSION_TOKEN
