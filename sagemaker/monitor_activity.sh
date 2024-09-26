@@ -24,10 +24,6 @@ AWS_ACCESS_KEY_ID=$1
 AWS_SECRET_ACCESS_KEY=$2
 AWS_SESSION_TOKEN=$3
 
-echo $AWS_ACCESS_KEY_ID
-echo $AWS_SECRET_ACCESS_KEY
-echo $AWS_SESSION_TOKEN
-
 aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID --profile $PROFILE
 aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY --profile $PROFILE
 aws configure set aws_session_token $AWS_SESSION_TOKEN --profile $PROFILE
