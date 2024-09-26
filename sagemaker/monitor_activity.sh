@@ -16,9 +16,9 @@ IDLE_TIME_THRESHOLD=120    # Idle time in seconds
 REGION="us-east-2"
 APP_NAME="default"
 APP_TYPE="JupyterLab"
-DOMAIN_ID="d-cofiway7apio"
-PROFILE="lifecycle-config-script"
-SPACE_NAME="private-automation-test"
+DOMAIN_ID="d-cofiway7apio"          # Sagemaker's domain id
+PROFILE="lifecycle-config-script"   # Temporary AWS profile
+SPACE_NAME=$4                       # Name of the JupyterLab Space
 
 AWS_ACCESS_KEY_ID=$1
 AWS_SECRET_ACCESS_KEY=$2
