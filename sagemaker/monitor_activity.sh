@@ -8,7 +8,7 @@
 IDLE_COUNTER=0             # Idle counter
 CHECK_INTERVAL=10          # Check interval in seconds
 IDLE_CPU_THRESHOLD=15      # CPU percentage threshold
-IDLE_TIME_THRESHOLD=120    # Idle time in seconds
+IDLE_TIME_THRESHOLD=900    # Idle time in seconds
 
 # AWS Options
 REGION="us-east-2"
