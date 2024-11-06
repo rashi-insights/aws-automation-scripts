@@ -13,7 +13,7 @@ IDLE_TIME_THRESHOLD=900    # Idle time in seconds
 # AWS Options
 REGION="us-east-2"
 APP_NAME="default"
-APP_TYPE="Code Editor"
+APP_TYPE="CodeEditor"
 DOMAIN_ID="d-cofiway7apio"          # Sagemaker's domain id
 PROFILE="lifecycle-config-script"   # Temporary AWS profile
 SPACE_NAME=$4                       # Name of the JupyterLab Space
